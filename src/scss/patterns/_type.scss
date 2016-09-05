@@ -1,0 +1,95 @@
+body {
+  @include font_sans;
+  font-weight: $font_weight_sans_light;
+  color: $black;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  line-height: 1.5;
+
+  @include respond('to', 'large_mobile') {
+    font-size: 16px;
+  }
+
+  @include respond('from', 'large_mobile') {
+    font-size: 18px;
+  }
+}
+
+%h, h1, h2, h3, h4, h5, h6 {
+  @include font_serif;
+  font-weight: $font_weight_serif_bold;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1, .h1 {
+  @include respond('to', 'large_mobile') {
+    font-size: 32px;
+  }
+
+  @include respond('from', 'large_mobile') {
+    font-size: 36px;
+  }
+}
+
+h2, .h2 {
+  @include respond('to', 'large_mobile') {
+    font-size: 28px;
+  }
+
+  @include respond('from', 'large_mobile') {
+    font-size: 32px;
+  }
+}
+
+h3, .h3 {
+  @include respond('to', 'large_mobile') {
+    font-size: 25px;
+  }
+
+  @include respond('from', 'large_mobile') {
+    font-size: 28px;
+  }
+}
+
+h4, .h4 {
+  @include respond('to', 'large_mobile') {
+    font-size: 23px;
+  }
+
+  @include respond('from', 'large_mobile') {
+    font-size: 26px;
+  }
+}
+
+h5, .h5 {
+  @include respond('to', 'large_mobile') {
+    font-size: 20px;
+  }
+
+  @include respond('from', 'large_mobile') {
+    font-size: 22px;
+  }
+}
+
+h6, .h6 {
+  @include respond('to', 'large_mobile') {
+    font-size: 16px;
+  }
+
+  @include respond('from', 'large_mobile') {
+    font-size: 18px;
+  }
+}
+
+a {
+  color: inherit;
+  transition: color 0.15s ease-in-out;
+}
+
+svg {
+  transition: fill 0.15s ease-in-out;
+}

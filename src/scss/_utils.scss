@@ -1,0 +1,22 @@
+.hidden {
+  @include hidden;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+// A special element that helps pass the $breakpoints map to JS. MAGIC!
+#media-queries {
+  &:before {
+    content: '#{to_string($breakpoints)}';
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    overflow: hidden;
+  }
+}

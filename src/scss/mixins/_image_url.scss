@@ -1,0 +1,3 @@
+@function image_url($file){
+    @return url('../images/' + $file); // Relative to compiled app.css
+}

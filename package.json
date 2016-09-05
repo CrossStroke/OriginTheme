@@ -1,0 +1,25 @@
+{
+  "name": "OriginTheme",
+  "description": "A starter theme, specifically for one-off bespoke themes.",
+  "repository": {
+    "type": "git"
+  },
+  "version": "1.0.0",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-ignore": "^2.0.1",
+    "gulp-filter": "^4.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-svg-symbols": "^1.0.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-zip": "^3.0.2"
+  },
+  "dependencies": {
+    "normalize.css": "^3.0.3"
+  }
+}

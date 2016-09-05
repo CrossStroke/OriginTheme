@@ -1,0 +1,64 @@
+body.debug_mq {
+  &:before {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    z-index: 100;
+    font-size: 12px;
+    color: #fff;
+    padding: 5px 8px 6px;
+    line-height: 1;
+    margin-left: 5px;
+    font-family: "Menlo", "Courier";
+
+    @include respond('to', 'mobile') {
+      content: "@include respond('to', 'mobile') {}";
+      background: #fc0;
+    }
+
+    @include respond('fromto', 'mobile', 'large_mobile') {
+      content: "@include respond('fromto', 'mobile', 'large_mobile') {}";
+      background: #f00;
+    }
+
+    @include respond('fromto', 'large_mobile', 'phablet') {
+      content: "@include respond('fromto', 'large_mobile', 'phablet') {}";
+      background: #060;
+    }
+
+    @include respond('fromto', 'phablet', 'small_tablet') {
+      content: "@include respond('fromto', 'phablet', 'small_tablet') {}";
+      background: #060;
+    }
+
+    @include respond('fromto', 'small_tablet', 'tablet') {
+      content: "@include respond('fromto', 'small_tablet', 'tablet') {}";
+      background: #006;
+    }
+
+    @include respond('fromto', 'tablet', 'large_tablet') {
+      content: "@include respond('fromto', 'tablet', 'large_tablet') {}";
+      background: #046;
+    }
+
+    @include respond('fromto', 'large_tablet', 'small_desktop') {
+      content: "@include respond('fromto', 'large_tablet', 'small_desktop') {}";
+      background: #506;
+    }
+
+    @include respond('fromto', 'small_desktop', 'desktop') {
+      content: "@include respond('fromto', 'small_desktop', 'desktop') {}";
+      background: #907;
+    }
+
+    @include respond('fromto', 'desktop', 'huge') {
+      content: "@include respond('fromto', 'desktop', 'huge') {}";
+      background: #09c;
+    }
+
+    @include respond('from', 'huge') {
+      content: "@include respond('from', 'huge') {}";
+      background: #f06;
+    }
+  }
+}

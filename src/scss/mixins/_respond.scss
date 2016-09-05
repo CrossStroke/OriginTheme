@@ -1,0 +1,27 @@
+@mixin respond($tofrom, $breakpoint, $breakpoint2: '') {
+    @if map-has-key($breakpoints, $breakpoint) {
+
+        @if $tofrom == 'to' {
+            @media (max-width: (map-get($breakpoints, $breakpoint) - 1px)) {
+                @content;
+            }
+        }
+
+        @if $tofrom == 'from' {
+            @media (min-width: map-get($breakpoints, $breakpoint)) {
+                @content;
+            }
+        }
+
+        @if $tofrom == 'fromto' {
+            @media (min-width: map-get($breakpoints, $breakpoint)) and (max-width: (map-get($breakpoints, $breakpoint2) - 1px)) {
+                @content;
+            }
+        }
+    }
+
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
