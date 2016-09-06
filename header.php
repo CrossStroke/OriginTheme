@@ -11,6 +11,13 @@
 
   <?php wp_head(); ?>
 
+  <?php
+    $site_analytics_code = get_field('site_analytics_code', 'option');
+    if ($site_analytics_code) :
+      echo $site_analytics_code;
+    endif;
+  ?>
+  
 </head>
 <body <?php body_class(); ?>>
 

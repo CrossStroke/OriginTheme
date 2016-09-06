@@ -21,6 +21,24 @@
 
 
   /*****
+    Init ACF options pages, if plugin is installed
+  *****/
+  if (function_exists('acf_add_options_page')):
+    acf_add_options_page(array(
+      'page_title' => 'Global Settings',
+      'menu_title' => 'Global',
+      'redirect' => false
+    ));
+
+    acf_add_options_page(array(
+      'page_title' => 'Social Settings',
+      'menu_title' => 'Social',
+      'redirect' => false
+    ));
+  endif;
+
+
+  /*****
     Add support for thumbnails and menus
   *****/
   add_theme_support('post-thumbnails');
