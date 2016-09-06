@@ -17,13 +17,14 @@
   <header class="site-header">
     <a class="logo" href="<?php bloginfo('url'); ?>/"><?php bloginfo('name'); ?></a>
 
-    <?php
-      wp_nav_menu(array(
-        'sort_column' => 'menu_order',
-        'menu' => 'Header',
-        'container' => 'nav',
-        'menu_class' => 'site-header-nav',
-        'items_wrap' => '%3$s'
-      ));
-    ?>
+    <nav class="site-header-nav">
+      <?php
+        wp_nav_menu(array(
+          'sort_column' => 'menu_order',
+          'menu' => 'Header',
+          'container' => '',
+          'items_wrap' => '<ul>%3$s</ul>'
+        ));
+      ?>
+    </nav>
   </header>
