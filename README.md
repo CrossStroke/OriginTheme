@@ -35,6 +35,7 @@ Task | Description
 
 I prefer to keep plugins to a minimum, but there are always exceptions.
 
+* [Advanced Custom Fields](https://www.advancedcustomfields.com/) – Because 99.99% of sites I build need some form of custom fields, and no way in hell am I writing those manually.
 * [Post Type Archive Link](https://wordpress.org/plugins/post-type-archive-links/) – Allows you to add _real_ CPT archive links to menus, without needing to add custom links. No extra crap is added.
 * [Simple Page Ordering](https://en-gb.wordpress.org/plugins/simple-page-ordering/) – Adds the ability to drag & drop reorder pages from the usual Posts admin pages, no extra UI is added
 
