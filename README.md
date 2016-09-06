@@ -5,19 +5,21 @@ More specifically, this is _my_ starter theme. It is how I start all my personal
 
 It is geared towards one-off themes where customisation options are something the client doesn't need or, isn't something they should even have access to. It also removes comments, as i'm yet to build a client site with them.
 
+
 ## Features
 
 * Disabled customiser
 * Disabled comments
 * Disabled admin bar (on the front-end)
 * Changes 'Posts' to 'News'
+* Press CPT with custom taxonomy and relates templates
 * Gulp for running tasks
   * Scss
   * Autoprefixer
   * Merge JS files into one `.js` file & minify
   * Merge SVG files into one to use as symbols
+  * LiveReload
   * Create zip file suitable for uploading/sharing
-* LiveReload
 
 
 ## Gulp Tasks
@@ -28,6 +30,21 @@ Task | Description
 `gulp build` | Build files with no watchers
 `gulp release` | Bundle all required files together and create zip file in this themes directory
 
+
+## Recommended Plugins
+
+I prefer to keep plugins to a minimum, but there are always exceptions.
+
+* [Post Type Archive Link](https://wordpress.org/plugins/post-type-archive-links/) – Allows you to add _real_ CPT archive links to menus, without needing to add custom links. No extra crap is added.
+* [Simple Page Ordering](https://en-gb.wordpress.org/plugins/simple-page-ordering/) – Adds the ability to drag & drop reorder pages from the usual Posts admin pages, no extra UI is added
+
+
 ## #protips
 
 * Add the class `debug_mq` to `body_class()` to show the current breakpoint
+
+
+## Press CPT
+
+* The 'name' field is the plural name
+* The 'description' field is the singular name

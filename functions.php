@@ -15,6 +15,12 @@
 
 
   /*****
+    Require CPT's and taxonomies
+  *****/
+  require "cpt/press.php";
+
+
+  /*****
     Add support for thumbnails and menus
   *****/
   add_theme_support('post-thumbnails');
@@ -65,30 +71,29 @@
   *****/
   // Hide most of the dashboard meta boxes
   function mpp_remove_dashboard_meta() {
-    remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
-    remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
-    remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
-    remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );
-    remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
-    remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
-    remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
-    remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
-    remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');//since 3.8
+    remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');
+    remove_meta_box('dashboard_plugins', 'dashboard', 'normal');
+    remove_meta_box('dashboard_primary', 'dashboard', 'side');
+    remove_meta_box('dashboard_secondary', 'dashboard', 'normal');
+    remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+    remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side');
+    remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+    remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
+    remove_meta_box('dashboard_activity', 'dashboard', 'normal');//since 3.8
   }
-  add_action( 'admin_init', 'mpp_remove_dashboard_meta' );
+  add_action('admin_init', 'mpp_remove_dashboard_meta');
 
   // Hide 'Welcome' panel, and 'Screen Options' & 'Help' tabs
-  add_action( 'wp_dashboard_setup', 'remove_welcome_panel' );
+  add_action('wp_dashboard_setup', 'remove_welcome_panel');
   function remove_welcome_panel() {
     global $wp_filter;
-    unset( $wp_filter['welcome_panel'] );
+    unset($wp_filter['welcome_panel']);
   }
   add_action('admin_head', 'mytheme_remove_help_tabs');
   function mytheme_remove_help_tabs() {
     $screen = get_current_screen();
     $screen->remove_help_tabs();
   }
-  add_filter('screen_options_show_screen', '__return_false');
 
   // Add our own meta box
   add_action('wp_dashboard_setup', 'register_my_dashboard_widget');
@@ -205,7 +210,7 @@
     // filter to remove TinyMCE emojis
     add_filter('tiny_mce_plugins', 'disable_emojicons_tinymce');
   }
-  
+
   add_action('init', 'disable_wp_emojicons');
   function disable_emojicons_tinymce($plugins) {
     if (is_array($plugins)) {
