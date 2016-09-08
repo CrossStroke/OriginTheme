@@ -1,38 +1,4 @@
-// Colours
-$black: #000000;
-
-// Breakpoints
-$breakpoints: (
-    'mobile': 400px,
-    'large_mobile': 500px,
-    'phablet': 600px,
-    'small_tablet': 700px,
-    'tablet':  800px,
-    'medium_tablet':  900px,
-    'large_tablet':  1000px,
-    'small_desktop': 1300px,
-    'desktop': 1400px,
-    'huge': 1800px
-) !default;
-
-// Font weights
-$font_weight_sans_light: 300;
-$font_weight_sans_regular: 400;
-$font_weight_sans_bold: 700;
-
-$font_weight_serif_light: 300;
-$font_weight_serif_regular: 400;
-$font_weight_serif_bold: 700;
-
-
-// Not technically vars, but used in the same manner
-@mixin font_sans {
-  font-family: sans-serif;
-}
-
-@mixin font_serif {
-  font-family: serif;
-}
+@import "vars";
 
 // Import our 'reset'
 @import "../../node_modules/normalize.css/normalize";
@@ -50,5 +16,7 @@ $font_weight_serif_bold: 700;
 @import "patterns/type";
 @import "patterns/buttons";
 @import "patterns/forms";
+
+@import "layouts/global";
 
 @import "debug";
