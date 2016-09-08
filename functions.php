@@ -46,6 +46,14 @@
 
 
   /*****
+    Add custom image sizes
+  *****/
+  add_image_size('larger', 1400, 1400);
+  add_image_size('huge', 2000, 2000);
+  add_image_size('massive', 2600, 2600);
+
+
+  /*****
     Hide Admin Bar in WP >= 3.1
   *****/
   add_filter('show_admin_bar', '__return_false');
