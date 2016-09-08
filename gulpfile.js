@@ -61,7 +61,9 @@ gulp.task('sass', function () {
 
 gulp.task('svg_sprite', function () {
   return gulp.src(svgInput)
-    .pipe(svgSymbols())
+    .pipe(svgSymbols({
+      templates: ['default-svg']
+    }))
     .pipe(gulp.dest('dist'));
 });
 
