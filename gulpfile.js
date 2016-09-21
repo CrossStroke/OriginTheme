@@ -31,7 +31,11 @@ var autoprefixerOptions = { browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
 
 var jsInput = './src/js/**.js';
 
-var jsPlugins = [
+// Plugins, libraries, etc
+var jsVendor = [];
+
+// Code specific to your theme
+var jsApp = [
   'src/js/utils.js',
   'src/js/app.js'
 ];
@@ -72,8 +76,18 @@ gulp.task('svg_sprite', function () {
 // Concat JS files
 // -----------------------------------------------------------------------------
 
-gulp.task('scripts', function(){
-  return gulp.src(jsPlugins)
+gulp.task('scriptsVendor', function(){
+  return gulp.src(jsVendor)
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest('dist'))
+    .pipe(rename('vendor.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist'))
+    .pipe(livereload());
+});
+
+gulp.task('scriptsApp', function(){
+  return gulp.src(jsApp)
     .pipe(concat('app.js'))
     .pipe(gulp.dest('dist'))
     .pipe(rename('app.min.js'))
@@ -122,11 +136,11 @@ gulp.task('release', function () {
 // Build task
 // -----------------------------------------------------------------------------
 
-gulp.task('build', ['svg_sprite', 'sass', 'scripts']);
+gulp.task('build', ['svg_sprite', 'sass', 'scriptsVendor', 'scriptsApp']);
 
 
 // -----------------------------------------------------------------------------
 // Default task
 // -----------------------------------------------------------------------------
 
-gulp.task('default', ['svg_sprite', 'sass', 'scripts', 'watch']);
+gulp.task('default', ['svg_sprite', 'sass', 'scriptsVendor', 'scriptsApp', 'watch']);
