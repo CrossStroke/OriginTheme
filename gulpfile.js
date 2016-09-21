@@ -109,7 +109,7 @@ gulp.task('watch', function() {
       console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
     });
 
-  gulp.watch([jsInput], ['scripts'])
+  gulp.watch([jsInput], ['scriptsVendor', 'scriptsApp'])
     .on('change', function(event) {
       console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
     });
