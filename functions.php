@@ -248,6 +248,24 @@
 
 
   /*****
+    Stop the 'Posts' archive being an active menu item with in a CPT sinlge item
+    https://wordpress.org/support/topic/blog-tab-gets-highlighted-in-nav-menu-for-custom-post-types#post-2711621
+  *****/
+  function origin_disable_posts_archive_nav_highlight_on_cpt_single($classes,$item,$args) {
+    if (!is_singular('post') && !is_category() && !is_tag()) :
+      $blog_page_id = intval(get_option('page_for_posts'));
+      if ($blog_page_id != 0) :
+        if ($item->object_id == $blog_page_id) :
+          unset($classes[array_search('current_page_parent',$classes)]);
+        endif;
+      endif;
+    endif;
+    return $classes;
+  }
+  add_filter('nav_menu_css_class','origin_disable_posts_archive_nav_highlight_on_cpt_single',10,3);
+
+
+  /*****
     Utility function to essentially replace `print_r`, but more useful and *always* shown, even if no data is supplied
   *****/
   function pre($var, $maxheight = false) {
