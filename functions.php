@@ -21,6 +21,14 @@
 
 
   /*****
+    Init ACF isnt installed, warn
+  *****/
+  if (!function_exists('acf_add_options_page') && !is_admin()):
+    pre('Install <b><a href="https://www.advancedcustomfields.com/" target="_blank">Advanced Custom Fields</a></b>');
+  endif;
+
+
+  /*****
     Init ACF options pages, if plugin is installed
   *****/
   if (function_exists('acf_add_options_page')):
