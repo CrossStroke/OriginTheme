@@ -45,13 +45,26 @@ var jsApp = [
 // Sass compilation
 // -----------------------------------------------------------------------------
 
-gulp.task('sass', function () {
+gulp.task('sassMin', function () {
   return gulp
     .src(sassInput)
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(autoprefixer(autoprefixerOptions))
     .pipe(rename('app.min.css'))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(sassOutput))
+    .pipe(filter("**/*.css"))
+    .pipe(livereload());
+});
+
+gulp.task('sass', function () {
+  return gulp
+    .src(sassInput)
+    .pipe(sourcemaps.init())
+    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+    .pipe(autoprefixer(autoprefixerOptions))
+    .pipe(rename('app.css'))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(sassOutput))
     .pipe(filter("**/*.css"))
@@ -104,7 +117,7 @@ gulp.task('scriptsApp', function(){
 gulp.task('watch', function() {
   livereload.listen();
 
-  gulp.watch([sassInput], ['sass'])
+  gulp.watch([sassInput], ['sass', 'sassMin'])
     .on('change', function(event) {
       console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
     });
@@ -136,11 +149,11 @@ gulp.task('release', function () {
 // Build task
 // -----------------------------------------------------------------------------
 
-gulp.task('build', ['svg_sprite', 'sass', 'scriptsVendor', 'scriptsApp']);
+gulp.task('build', ['svg_sprite', 'sass', 'sassMin', 'scriptsVendor', 'scriptsApp']);
 
 
 // -----------------------------------------------------------------------------
 // Default task
 // -----------------------------------------------------------------------------
 
-gulp.task('default', ['svg_sprite', 'sass', 'scriptsVendor', 'scriptsApp', 'watch']);
+gulp.task('default', ['svg_sprite', 'sass', 'sassMin', 'scriptsVendor', 'scriptsApp', 'watch']);
