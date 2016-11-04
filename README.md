@@ -43,6 +43,7 @@ I prefer to keep plugins to a minimum, but there are always exceptions.
 ## #protips
 
 * Add the class `debug_mq` to `body_class()` to show the current breakpoint
+  * If your local domain ends with `.dev`, that'll work automatically
 
 
 ## Press CPT

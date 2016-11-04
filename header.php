@@ -1,3 +1,10 @@
+<?php
+  $body_classes = array();
+
+  if (strpos($_SERVER['HTTP_HOST'], '.dev') > -1) :
+    $body_classes[] = 'debug_mq';
+  endif;
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -17,9 +24,9 @@
       echo $site_analytics_code;
     endif;
   ?>
-  
+
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class($body_classes); ?>>
 
   <header class="site-header">
     <a class="logo" href="<?php bloginfo('url'); ?>/"><?php bloginfo('name'); ?></a>
