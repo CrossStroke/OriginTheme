@@ -11,12 +11,13 @@ It is geared towards one-off themes where customisation options are something th
 * Disabled customiser
 * Disabled comments
 * Disabled admin bar (on the front-end)
+* Simplified Editor buttons
 * Changes 'Posts' to 'News'
 * Press CPT with custom taxonomy and relates templates
 * Gulp for running tasks
   * Scss
   * Autoprefixer
-  * Merge JS files into one `.js` file & minify
+  * Merge JS files into two `.js` file & minify (`venfor.js` & `app.js`)
   * Merge SVG files into one to use as symbols
   * LiveReload
   * Create zip file suitable for uploading/sharing
@@ -44,9 +45,3 @@ I prefer to keep plugins to a minimum, but there are always exceptions.
 
 * Add the class `debug_mq` to `body_class()` to show the current breakpoint
   * If your local domain ends with `.dev`, that'll work automatically
-
-
-## Press CPT
-
-* The 'name' field is the plural name
-* The 'description' field is the singular name
