@@ -208,6 +208,44 @@
 
 
   /*****
+    Remove some editor buttons – to client should have the ability to justify text!
+  *****/
+  function origin_tinymce_editor_buttons($buttons) {
+    return array(
+      "formatselect",
+      "separator",
+      "bold",
+      "italic",
+      "underline",
+      "strikethrough",
+      "bullist",
+      "numlist",
+      "link",
+      "unlink",
+      "image",
+      "blockquote",
+      "outdent",
+      "indent",
+      "undo",
+      "redo",
+      "removeformat",
+      "code"
+    );
+  }
+  add_filter("mce_buttons", "origin_tinymce_editor_buttons", 99);
+
+
+  /*****
+    Remove some block styles
+  *****/
+  function origin_tinymce_block_formats($arr){
+    $arr['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5;Heading 6=h6;Pre=pre;Code=code';
+    return $arr;
+  }
+  add_filter('tiny_mce_before_init', 'origin_tinymce_block_formats');
+
+
+  /*****
     Utility function to essentially replace `print_r`, but more useful and *always* shown, even if no data is supplied
   *****/
   function pre($var, $maxheight = false) {
