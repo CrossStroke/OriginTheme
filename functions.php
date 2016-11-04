@@ -8,8 +8,9 @@
 
 
   function origin_add_styles_and_scripts() {
-    wp_enqueue_style('app', get_template_directory_uri() . '/dist/app.min.css', array(), '1.1', 'all');
-    wp_enqueue_script('app', get_template_directory_uri() . '/dist/app.min.js', array ('jquery'), 1.1, true);
+    wp_enqueue_style('app', get_template_directory_uri() . '/dist/app.min.css', array(), '1.2', 'all');
+    wp_enqueue_script('vendor', get_template_directory_uri() . '/dist/vendor.min.js', array ('jquery'), 1.2, true);
+    wp_enqueue_script('app', get_template_directory_uri() . '/dist/app.min.js', array ('jquery'), 1.2, true);
   }
   add_action('wp_enqueue_scripts', 'origin_add_styles_and_scripts');
 
