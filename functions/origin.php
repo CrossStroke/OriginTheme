@@ -19,7 +19,7 @@
   *****/
   remove_action('load-update-core.php', 'wp_update_themes');
   add_filter('pre_site_transient_update_themes', create_function('$a', "return null;"));
-  
+
 
   /*****
     Hide all dashboard stuff
@@ -192,6 +192,19 @@
     return $classes;
   }
   add_filter('nav_menu_css_class','origin_disable_posts_archive_nav_highlight_on_cpt_single',10,3);
+
+
+
+  /*****
+    Remove <p> tags surounding images
+    https://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/#comment-150114
+    ---
+    Might need this http://wordpress.stackexchange.com/a/174585
+  *****/
+  function filter_ptags_on_images($content){
+    return preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '\1', $content);
+  }
+  add_filter('the_content', 'filter_ptags_on_images');
 
 
   /*****
