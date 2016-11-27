@@ -85,3 +85,13 @@
     endif;
   }
   add_action('pre_get_posts', 'origin_press_archive_posts_per_page');
+
+  // Menu Highlight for taxonomy pages
+  function origin_press_current_type_nav_class($classes, $item) {
+    global $wp_query;
+    if ($item->object == 'press' && isset($wp_query->query['presstype'])) :
+      array_push($classes, 'current-menu-item');
+    endif;
+    return $classes;
+  }
+  add_filter('nav_menu_css_class', 'origin_press_current_type_nav_class', 10, 2);
