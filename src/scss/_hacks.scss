@@ -1,0 +1,5 @@
+// Make input placeholders in Webkit inherit the line height of the input itself.
+// i.e. Placeholders will be in the same position as user text. The way it should be…
+::-webkit-input-placeholder {
+    line-height: normal;
+}
