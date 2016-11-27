@@ -68,23 +68,30 @@
 
   add_action('init', 'origin_press_init');
 
-  // Set the order of Press items in both the nornal archive and taxonomy archives
+
+  // Set the order and number of items in the Press Archive
   function origin_press_archive_posts_order($query) {
-    if (!$query->is_admin && ($query->get('post_type') == 'press') || ($query->is_tax() && isset($query->query['presstype']))) :
+    if (!$query->is_admin && $query->get('post_type') == 'press') :
       $query->set('orderby', 'menu_order');
       $query->set('order', 'ASC');
+      $query->set('posts_per_page', 4);
     endif;
     return $query;
   }
   add_filter('pre_get_posts', 'origin_press_archive_posts_order');
 
-  // Set the number of Press items to show on both the nornal archive and taxonomy archives
-  function origin_press_archive_posts_per_page($query) {
-    if ($query->is_main_query() && !is_admin() && ($query->is_post_type_archive('press') || ($query->is_tax() && isset($query->query['presstype'])))) :
-      $query->set('posts_per_page', 4);
+
+  // Set the order and number of items in the Press Type taxonomy archive
+  function origin_presstype_taxonomy_posts_order($query) {
+    if (!$query->is_admin && ($query->is_tax() && isset($query->query['presstype']))) :
+      $query->set('orderby', 'menu_order');
+      $query->set('order', 'ASC');
+      $query->set('posts_per_page', 6);
     endif;
+    return $query;
   }
-  add_action('pre_get_posts', 'origin_press_archive_posts_per_page');
+  add_filter('pre_get_posts', 'origin_presstype_taxonomy_posts_order');
+
 
   // Menu Highlight for taxonomy pages
   function origin_press_current_type_nav_class($classes, $item) {
