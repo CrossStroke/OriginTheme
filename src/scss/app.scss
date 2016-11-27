@@ -1,15 +1,25 @@
+/*****
+  Import the things that dont output anything
+*****/
+
 @import "vars";
 
-// Import our 'reset'
-@import "../../node_modules/normalize.css/normalize";
+@import "functions/font_url";
+@import "functions/image_url";
+@import "functions/to_string";
 
 @import "mixins/clearfix";
-@import "mixins/font_url";
-@import "mixins/image_url";
 @import "mixins/hidden";
 @import "mixins/respond";
-@import "mixins/to_string";
 @import "mixins/retina_image";
+
+
+/*****
+  Now import the things that do output stuff
+*****/
+
+// Import our 'reset', NPM bits and other libraries
+@import "../../node_modules/normalize.css/normalize";
 
 @import "utils";
 
@@ -17,6 +27,9 @@
 @import "patterns/buttons";
 @import "patterns/forms";
 
+@import "components/press_item";
+
 @import "layouts/global";
+@import "layouts/press";
 
 @import "debug";

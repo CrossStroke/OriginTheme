@@ -9,10 +9,14 @@ body {
   line-height: 1.5;
 
   @include respond('to', 'large_mobile') {
+    font-size: 15px;
+  }
+
+  @include respond('fromto', 'large_mobile', 'medium_tablet') {
     font-size: 16px;
   }
 
-  @include respond('from', 'large_mobile') {
+  @include respond('from', 'medium_tablet') {
     font-size: 18px;
   }
 }
@@ -27,61 +31,85 @@ body {
 
 h1, .h1 {
   @include respond('to', 'large_mobile') {
-    font-size: 32px;
+    font-size: 30px;
   }
 
-  @include respond('from', 'large_mobile') {
+  @include respond('fromto', 'large_mobile', 'medium_tablet') {
+    font-size: 33px;
+  }
+
+  @include respond('from', 'medium_tablet') {
     font-size: 36px;
   }
 }
 
 h2, .h2 {
   @include respond('to', 'large_mobile') {
+    font-size: 24px;
+  }
+
+  @include respond('fromto', 'large_mobile', 'medium_tablet') {
     font-size: 28px;
   }
 
-  @include respond('from', 'large_mobile') {
+  @include respond('from', 'medium_tablet') {
     font-size: 32px;
   }
 }
 
 h3, .h3 {
   @include respond('to', 'large_mobile') {
-    font-size: 25px;
+    font-size: 20px;
   }
 
-  @include respond('from', 'large_mobile') {
+  @include respond('fromto', 'large_mobile', 'medium_tablet') {
+    font-size: 24px;
+  }
+
+  @include respond('from', 'medium_tablet') {
     font-size: 28px;
   }
 }
 
 h4, .h4 {
   @include respond('to', 'large_mobile') {
+    font-size: 21px;
+  }
+
+  @include respond('fromto', 'large_mobile', 'medium_tablet') {
     font-size: 23px;
   }
 
-  @include respond('from', 'large_mobile') {
+  @include respond('from', 'medium_tablet') {
     font-size: 26px;
   }
 }
 
 h5, .h5 {
   @include respond('to', 'large_mobile') {
+    font-size: 18px;
+  }
+
+  @include respond('fromto', 'large_mobile', 'medium_tablet') {
     font-size: 20px;
   }
 
-  @include respond('from', 'large_mobile') {
+  @include respond('from', 'medium_tablet') {
     font-size: 22px;
   }
 }
 
 h6, .h6 {
   @include respond('to', 'large_mobile') {
-    font-size: 16px;
+    font-size: 17px;
   }
 
-  @include respond('from', 'large_mobile') {
+  @include respond('fromto', 'large_mobile', 'medium_tablet') {
     font-size: 18px;
+  }
+
+  @include respond('from', 'medium_tablet') {
+    font-size: 19px;
   }
 }
 

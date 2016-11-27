@@ -9,11 +9,13 @@
     ?>
   </ul>
 
-  <?php
-    while (have_posts()) : the_post();
-      get_template_part('partials/content', 'press');
-    endwhile;
-  ?>
+  <div class="press-items">
+    <?php
+      while (have_posts()) : the_post();
+        get_template_part('partials/content', 'press');
+      endwhile;
+    ?>
+  </div>
 
   <?php the_posts_pagination(); ?>
 

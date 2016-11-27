@@ -1,4 +1,4 @@
-<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class('press-item'); ?> id="post-<?php the_ID(); ?>">
   <h1><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 
   <?php
@@ -9,7 +9,7 @@
       echo '</div>';
     endif;
   ?>
-  
+
   <?php
     if (has_post_thumbnail()) :
       $image_id = get_post_thumbnail_id($post->ID);

@@ -250,7 +250,7 @@
   *****/
   function pre($var, $maxheight = false) {
     $maxheightcss = ($maxheight) ? 'max-height: 300px;' : '';
-    echo '<pre style="background: #fcffb1; text-align: left; margin: 0; box-sizing: border-box; padding: 10px 15px; font-size: 14px; line-height: 18px; width: 100%; overflow: auto; outline: 4px solid rgb('. rand(0, 250) .','. rand(0, 250) .','. rand(0, 250) .');'. $maxheightcss .'">';
+    echo '<pre style="background: #fcffb1; color: #000; font-weight: normal; text-align: left; margin: 0; box-sizing: border-box; padding: 10px 15px; font-size: 14px; line-height: 18px; width: 100%; overflow: auto; outline: 4px solid rgb('. rand(0, 150) .','. rand(0, 150) .','. rand(0, 150) .');'. $maxheightcss .'">';
       if ($var) :
         print_r($var);
       else :
