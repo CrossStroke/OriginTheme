@@ -18,15 +18,15 @@
 
   <?php wp_head(); ?>
 
+</head>
+<body <?php body_class($body_classes); ?>>
+
   <?php
     $site_analytics_code = get_field('site_analytics_code', 'option');
     if ($site_analytics_code) :
       echo $site_analytics_code;
     endif;
   ?>
-
-</head>
-<body <?php body_class($body_classes); ?>>
 
   <header class="site-header">
     <a class="logo" href="<?php bloginfo('url'); ?>/"><?php bloginfo('name'); ?></a>
