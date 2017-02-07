@@ -207,6 +207,22 @@
   add_filter('the_content', 'filter_ptags_on_images');
 
 
+
+  /*****
+    Pluralise string
+    ---
+    Returns different srings based on the int given to it
+    ---
+    echo origin_plural($number_of_people, 'person', 'people');
+  *****/
+  function origin_plural( $amount, $singular = '', $plural = 's' ) {
+    if ($amount === 1) {
+      return $singular;
+    }
+    return $plural;
+  }
+
+
   /*****
     Remove some editor buttons – to client should have the ability to justify text!
   *****/
