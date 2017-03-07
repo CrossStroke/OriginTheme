@@ -18,7 +18,7 @@
   /*****
     Require CPT's and taxonomies
   *****/
-  require "cpt/press.php";
+  // require "cpt/your_cpt.php";
 
 
   /*****
@@ -61,23 +61,6 @@
     echo return_svg($icon);
   }
 
-
-  /*****
-    Init ACF options pages, if plugin is installed
-  *****/
-  if (function_exists('acf_add_options_page')):
-    acf_add_options_page(array(
-      'page_title' => 'Global Settings',
-      'menu_title' => 'Global',
-      'redirect' => false
-    ));
-
-    acf_add_options_page(array(
-      'page_title' => 'Social Settings',
-      'menu_title' => 'Social',
-      'redirect' => false
-    ));
-  endif;
 
   // And now include a bunch of stuff that hides admin panels, and some useful functions
   require "functions/origin.php";

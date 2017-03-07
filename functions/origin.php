@@ -1,14 +1,6 @@
 <?php
 
   /*****
-    Init ACF isnt installed, warn
-  *****/
-  if (!function_exists('acf_add_options_page') && !is_admin()):
-    pre('Install <b><a href="https://www.advancedcustomfields.com/" target="_blank">Advanced Custom Fields</a></b>');
-  endif;
-
-
-  /*****
     Hide Admin Bar in WP >= 3.1
   *****/
   add_filter('show_admin_bar', '__return_false');
